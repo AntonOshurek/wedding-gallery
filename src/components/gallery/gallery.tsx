@@ -62,7 +62,7 @@ const Gallery = (): JSX.Element => {
             <li className="gallery__item" key={`${image}=${i}`}>
               <img
                 className="gallery__image"
-                src={image}
+                src={`/wedding-gallery/${image}`}
                 alt=""
                 width="200"
                 height="200"
@@ -77,7 +77,11 @@ const Gallery = (): JSX.Element => {
             <Swiper navigation initialSlide={activeIndex} modules={[Navigation]}>
               {imageData.map((image, index) => (
                 <SwiperSlide key={index}>
-                  <img className="gallery__modal-image" src={image} alt={image} />
+                  <img
+                    className="gallery__modal-image"
+                    src={`/wedding-gallery/${image}`}
+                    alt={image}
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>
