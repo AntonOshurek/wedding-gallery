@@ -1,14 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { MouseEvent } from 'react';
+//components
+import GalleryModal from '../gallery-modal/gallery-modal';
 //data
 import imageData from '../../data/image-data';
 //styles
 import './gallery.scss';
-
-// import SwiperCore from 'swiper';
-import { Navigation } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css';
 
 const Gallery = (): JSX.Element => {
   const [activeIndex, setActiveIndex] = useState<null | number>(null);
@@ -53,7 +50,7 @@ const Gallery = (): JSX.Element => {
   }, [isModalOpen, handleKeyPress]);
 
   return (
-    <section className="gallery">
+    <section className={`gallery ${isModalOpen && 'galley__modal-open'}`}>
       <h2 className="visually-hidden">Wedding gallery</h2>
 
       <ul className="gallery__list">
@@ -73,19 +70,12 @@ const Gallery = (): JSX.Element => {
         })}
 
         {isModalOpen && activeIndex !== null && (
-          <div className="gallery__modal" onClick={closeModal} ref={modalRef}>
-            <Swiper navigation initialSlide={activeIndex} modules={[Navigation]}>
-              {imageData.map((image, index) => (
-                <SwiperSlide key={index}>
-                  <img
-                    className="gallery__modal-image"
-                    src={`/wedding-gallery/${image}`}
-                    alt={image}
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+          <GalleryModal
+            closeModal={closeModal}
+            imageData={imageData}
+            activeIndex={activeIndex}
+            modalRef={modalRef}
+          />
         )}
       </ul>
     </section>
