@@ -53,7 +53,7 @@ const Gallery = (): JSX.Element => {
   }, [isModalOpen, handleKeyPress]);
 
   return (
-    <section className="gallery">
+    <section className={`gallery ${isModalOpen && 'galley__modal-open'}`}>
       <h2 className="visually-hidden">Wedding gallery</h2>
 
       <ul className="gallery__list">
