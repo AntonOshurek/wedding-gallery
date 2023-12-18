@@ -1,4 +1,4 @@
-const rootBaseName = '';
+const rootBaseName = '/wedding-gallery';
 
 const enum AppRoute {
   ROOT = '/',
