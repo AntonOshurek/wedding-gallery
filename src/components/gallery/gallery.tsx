@@ -59,7 +59,7 @@ const Gallery = (): JSX.Element => {
             <li className="gallery__item" key={`${image}=${i}`}>
               <img
                 className="gallery__image"
-                src={`/wedding-gallery/${image}`}
+                src={`wedding-gallery/${image}`}
                 alt=""
                 width="200"
                 height="200"
