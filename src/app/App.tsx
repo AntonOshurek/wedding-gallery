@@ -1,17 +1,17 @@
-//components
-import Header from '../components/header/header';
-import Gallery from '../components/gallery/gallery';
-//styles
-import './App.scss';
+//router
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+//pages
+import MainPage from '../pages/main-page';
+//variables
+import { AppRoute, rootBaseName } from '../variables/routing-variables';
 
 function App() {
   return (
-    <div className="app">
-      <div className="app__wrap container">
-        <Header />
-        <Gallery />
-      </div>
-    </div>
+    <BrowserRouter basename={rootBaseName}>
+      <Routes>
+        <Route path={AppRoute.ROOT} element={<MainPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
