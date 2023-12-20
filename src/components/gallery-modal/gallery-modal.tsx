@@ -27,7 +27,12 @@ const GalleryModal = ({
       <Swiper navigation initialSlide={activeIndex} modules={[Navigation]}>
         {imageData.map((image, index) => (
           <SwiperSlide key={index}>
-            <img className="gallery-modal__image" src={`${webPageRoute}/${image}`} alt={image} />
+            <img
+              loading="lazy"
+              className="gallery-modal__image"
+              src={`${webPageRoute}/${image}`}
+              alt={image}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
