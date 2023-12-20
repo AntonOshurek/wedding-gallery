@@ -3,6 +3,8 @@ import { MouseEvent } from 'react';
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
+//variables
+import { webPageRoute } from '../../variables/routing-variables';
 //styles
 import './gallery-modal.scss';
 import './swiper.scss';
@@ -25,7 +27,7 @@ const GalleryModal = ({
       <Swiper navigation initialSlide={activeIndex} modules={[Navigation]}>
         {imageData.map((image, index) => (
           <SwiperSlide key={index}>
-            <img className="gallery-modal__image" src={`/wedding-gallery/${image}`} alt={image} />
+            <img className="gallery-modal__image" src={`${webPageRoute}/${image}`} alt={image} />
           </SwiperSlide>
         ))}
       </Swiper>
