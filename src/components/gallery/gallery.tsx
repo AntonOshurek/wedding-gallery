@@ -66,6 +66,7 @@ const Gallery = (): JSX.Element => {
                 width="200"
                 height="200"
                 onClick={() => openModal(i)}
+                loading="lazy"
               />
             </li>
           );
