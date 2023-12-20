@@ -1,7 +1,8 @@
-const rootBaseName = '/wedding-gallery';
+const rootBaseName = '';
+const webPageRoute = 'http://kingaikuba.pa.wlak.pl';
 
 const enum AppRoute {
   ROOT = '/',
 }
 
-export { rootBaseName, AppRoute };
+export { rootBaseName, AppRoute, webPageRoute };

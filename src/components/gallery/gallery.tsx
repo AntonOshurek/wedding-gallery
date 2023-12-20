@@ -2,6 +2,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { MouseEvent } from 'react';
 //components
 import GalleryModal from '../gallery-modal/gallery-modal';
+//variables
+import { webPageRoute } from '../../variables/routing-variables';
 //data
 import imageData from '../../data/image-data';
 //styles
@@ -59,7 +61,7 @@ const Gallery = (): JSX.Element => {
             <li className="gallery__item" key={`${image}=${i}`}>
               <img
                 className="gallery__image"
-                src={`${process.env.PUBLIC_URL}/${image}`}
+                src={`${webPageRoute}/${image}`}
                 alt=""
                 width="200"
                 height="200"
